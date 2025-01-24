@@ -6,5 +6,5 @@ Basic example of CI/CD for an Nginx Docker image
 docker pull ghcr.io/l4rm4nd/cicd-example:latest
 
 # run the container via docker run
-docker run --rm -p 8888:80 l4rm4nd/cicd-example:latest
+docker run --rm -p 8888:80 ghcr.io/l4rm4nd/cicd-example:latest
 ````
