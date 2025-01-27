@@ -1,3 +1,10 @@
+## [0.1.2](https://github.com/l4rm4nd/CICD-Example/compare/v0.1.1...v0.1.2) (2025-01-27)
+
+
+### Bug Fixes
+
+* remove semgrep ([3618196](https://github.com/l4rm4nd/CICD-Example/commit/36181961207e5ef7a67816b873d45144a9f2f376))
+
 ## [0.1.1](https://github.com/l4rm4nd/CICD-Example/compare/v0.1.0...v0.1.1) (2025-01-27)
 
 
