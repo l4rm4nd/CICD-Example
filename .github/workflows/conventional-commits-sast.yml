@@ -13,40 +13,10 @@ permissions:
 
 jobs:
 
-  bandit:
-    name: SAST with Bandit
-    runs-on: ubuntu-latest
-    if: github.event_name != 'pull_request' && needs.changelog.outputs.skipped == 'false'
-    
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.x'
-
-      - name: Install Bandit
-        run: pip install bandit
-
-      - name: Run Bandit
-        id: bandit
-        run: |
-          bandit -r . -f html -o bandit_report.html
-
-      - name: Upload Bandit report
-        if: failure()
-        uses: actions/upload-artifact@v3
-        with:
-          name: bandit-report
-          path: bandit_report.html
-
   changelog:
     name: Changelog
     if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
-    needs: bandit
 
     outputs:
       skipped: ${{ steps.changelog.outputs.skipped }}
@@ -73,6 +43,36 @@ jobs:
           tag_name: ${{ steps.changelog.outputs.tag }}
           body: ${{ steps.changelog.outputs.clean_changelog }}
           token: ${{ secrets.GITHUB_TOKEN }}
+
+  bandit:
+    name: SAST with Bandit
+    runs-on: ubuntu-latest
+    if: github.event_name != 'pull_request' && needs.changelog.outputs.skipped == 'false'
+    needs: changelog
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install Bandit
+        run: pip install bandit
+
+      - name: Run Bandit
+        id: bandit
+        run: |
+          bandit -r . -f html -o bandit_report.html
+
+      - name: Upload Bandit report
+        if: failure()
+        uses: actions/upload-artifact@v3
+        with:
+          name: bandit-report
+          path: bandit_report.html
      
   deploy:
     name: Deploy Image
