@@ -1,4 +1,11 @@
-## 0.1.0 (2025-01-24)
+## [0.1.1](https://github.com/l4rm4nd/CICD-Example/compare/v0.1.0...v0.1.1) (2025-01-27)
+
+
+### Bug Fixes
+
+* Create run.py ([00218d7](https://github.com/l4rm4nd/CICD-Example/commit/00218d7a79a15a5c63250ade1c3e08668a5e168c))
+
+## [0.1.0](https://github.com/l4rm4nd/CICD-Example/compare/7815e0cfcc3ef4fed46c8a93b87e82fcb2fb03a9...v0.1.0) (2025-01-24)
 
 
 ### Bug Fixes
