@@ -1,3 +1,10 @@
+## [1.1.0](https://github.com/l4rm4nd/CICD-Example/compare/v1.0.2...v1.1.0) (2025-01-28)
+
+
+### Features
+
+* Update index.html ([346a827](https://github.com/l4rm4nd/CICD-Example/commit/346a827ddeeba9059bd1e3435d9525f0b7b501b2))
+
 ## [1.0.2](https://github.com/l4rm4nd/CICD-Example/compare/v1.0.1...v1.0.2) (2025-01-28)
 
 
