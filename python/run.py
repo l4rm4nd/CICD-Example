@@ -3,7 +3,7 @@ import subprocess
 
 def insecure_function():
     # Hardcoded secret (B105:hardcoded_password_string)
-    password = "supersecretpassword1"
+    password = "itkservice-securepassword"
 
     # Unsafe use of subprocess (B602:subprocess_popen_with_shell_equals_true)
     command = "ls -l"
