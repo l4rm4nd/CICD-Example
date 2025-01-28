@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/l4rm4nd/CICD-Example/compare/v1.0.1...v1.0.2) (2025-01-28)
+
+
+### Bug Fixes
+
+* remove example string ([28b2e24](https://github.com/l4rm4nd/CICD-Example/commit/28b2e243c30abc748516cb226b21d410b9cdcbc5))
+
 ## [1.0.1](https://github.com/l4rm4nd/CICD-Example/compare/v0.1.0...v1.0.1) (2025-01-28)
 
 
