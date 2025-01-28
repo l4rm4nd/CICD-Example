@@ -3,7 +3,7 @@ name: CI
 on:
   push:
     branches:
-      - sast
+      - conventional-commits
   pull_request:
 
 permissions:
@@ -32,7 +32,6 @@ jobs:
         uses: TriPSs/conventional-changelog-action@v5
         with:
           preset: "conventionalcommits"
-          #config-file-path: changelog.config.js
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Create Release
@@ -72,11 +71,11 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: bandit-report
-          path: bandit_report.html
-     
+          path: bandit_report.html          
+
   deploy:
     name: Deploy Image
-    needs: [changelog, bandit]
+    needs: [changelog]
     if: github.event_name != 'pull_request' && needs.changelog.outputs.skipped == 'false'
     runs-on: ubuntu-latest
 
@@ -84,9 +83,9 @@ jobs:
       - name: Get repository name
         id: get_repo
         run: echo "REPO_NAME=$(echo ${{ github.repository }} | cut -d'/' -f2 | tr '[:upper:]' '[:lower:]')" >> $GITHUB_ENV
-
+    
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
 
       - name: Login to GHCR.IO
         uses: docker/login-action@v1
@@ -107,37 +106,36 @@ jobs:
         id: meta
         with:
           images: |
-            ghcr.io/${{ secrets.DOCKER_HUB_USERNAME }}/${{ env.REPO_NAME }}
+            ghcr.io/${{ github.repository_owner }}/${{ env.REPO_NAME }}
           tags: |
             latest
             ${{ needs.changelog.outputs.version }}
-            ${{ github.sha }}
             ${{ env.MAJOR_MINOR_TAG }}
 
       - name: Build and Push Docker Image
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@4a13e500e55cf31b7a5d59a38ab2040ab0f42f56 # v5
         with:
           context: .
-          file: docker/Dockerfile
+          file: Dockerfile
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 
   release:
     name: Release
-    needs: [changelog, bandit, deploy]
+    needs: [changelog]
     if: github.event_name != 'pull_request' && needs.changelog.outputs.skipped == 'false'
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
-
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
+  
       - name: Debug Changelog Outputs
         run: echo ${{ needs.changelog.outputs.tag }}
-
+        
       - name: Create Release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@de2c0eb89ae2a093876385947365aca7b0e5f844 # v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           tag_name: ${{ needs.changelog.outputs.tag }}
