@@ -1,3 +1,10 @@
+## [0.1.4](https://github.com/l4rm4nd/CICD-Example/compare/v0.1.3...v0.1.4) (2025-01-28)
+
+
+### Bug Fixes
+
+* passwortänderung ([4968bba](https://github.com/l4rm4nd/CICD-Example/commit/4968bba2375664e83be52c70725d5776e478b6b4))
+
 ## [0.1.3](https://github.com/l4rm4nd/CICD-Example/compare/v0.1.2...v0.1.3) (2025-01-27)
 
 
