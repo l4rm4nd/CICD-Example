@@ -1,3 +1,10 @@
+## [0.1.8](https://github.com/l4rm4nd/CICD-Example/compare/v0.1.7...v0.1.8) (2025-01-28)
+
+
+### Bug Fixes
+
+* ci workflow ([8e1361c](https://github.com/l4rm4nd/CICD-Example/commit/8e1361cf61602f78b0985543eaedc96272a47243))
+
 ## [0.1.7](https://github.com/l4rm4nd/CICD-Example/compare/v0.1.6...v0.1.7) (2025-01-28)
 
 
@@ -27,13 +34,4 @@
 ### Bug Fixes
 
 * passwortänderung ([4968bba](https://github.com/l4rm4nd/CICD-Example/commit/4968bba2375664e83be52c70725d5776e478b6b4))
-
-## [0.1.3](https://github.com/l4rm4nd/CICD-Example/compare/v0.1.2...v0.1.3) (2025-01-27)
-
-
-### Bug Fixes
-
-* Update conventional-commits-sast.yml ([0a0b7e2](https://github.com/l4rm4nd/CICD-Example/commit/0a0b7e2de93d9b2b188a3e4705837e05e1c5c6fa))
-* Update conventional-commits-sast.yml ([4920afe](https://github.com/l4rm4nd/CICD-Example/commit/4920afe745cd0f1a6fadabad22e8dc2f9c1d5ec0))
-* Update run.py ([519d122](https://github.com/l4rm4nd/CICD-Example/commit/519d122fc780c2cd04529a7453929821dfe88b52))
 
