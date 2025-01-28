@@ -1,3 +1,10 @@
+## [0.1.6](https://github.com/l4rm4nd/CICD-Example/compare/v0.1.5...v0.1.6) (2025-01-28)
+
+
+### Bug Fixes
+
+* use ghcr registry over dockerhub ([07bb50a](https://github.com/l4rm4nd/CICD-Example/commit/07bb50ac176a40346a19fcc2c88dd249772f190e))
+
 ## [0.1.5](https://github.com/l4rm4nd/CICD-Example/compare/v0.1.4...v0.1.5) (2025-01-28)
 
 
@@ -27,11 +34,4 @@
 ### Bug Fixes
 
 * remove semgrep ([3618196](https://github.com/l4rm4nd/CICD-Example/commit/36181961207e5ef7a67816b873d45144a9f2f376))
-
-## [0.1.1](https://github.com/l4rm4nd/CICD-Example/compare/v0.1.0...v0.1.1) (2025-01-27)
-
-
-### Bug Fixes
-
-* Create run.py ([00218d7](https://github.com/l4rm4nd/CICD-Example/commit/00218d7a79a15a5c63250ade1c3e08668a5e168c))
 
