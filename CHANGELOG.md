@@ -1,3 +1,10 @@
+## [0.1.9](https://github.com/l4rm4nd/CICD-Example/compare/v0.1.8...v0.1.9) (2025-02-01)
+
+
+### Bug Fixes
+
+* bump artifact to v4 ([a113fe0](https://github.com/l4rm4nd/CICD-Example/commit/a113fe02e999ab70d6c37962c5e4080e72945df4))
+
 ## [0.1.8](https://github.com/l4rm4nd/CICD-Example/compare/v0.1.7...v0.1.8) (2025-01-28)
 
 
@@ -27,11 +34,4 @@
 ### Bug Fixes
 
 * remove insecure code ([fa68040](https://github.com/l4rm4nd/CICD-Example/commit/fa680408c6c76b439b82cf95c03556d8fad6b31e))
-
-## [0.1.4](https://github.com/l4rm4nd/CICD-Example/compare/v0.1.3...v0.1.4) (2025-01-28)
-
-
-### Bug Fixes
-
-* passwortänderung ([4968bba](https://github.com/l4rm4nd/CICD-Example/commit/4968bba2375664e83be52c70725d5776e478b6b4))
 
